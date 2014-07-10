@@ -1,9 +1,4 @@
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-  config.use_transactional_fixtures = false
-  config.use_transactional_examples = false
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :helper
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
