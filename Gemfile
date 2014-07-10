@@ -5,6 +5,7 @@ gem 'rails', '4.1.2'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise', '~> 3.2.4'
+gem 'simple_form'
 gem 'decent_exposure', '~> 2.3.2'
 gem 'zeus'
 
