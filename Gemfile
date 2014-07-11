@@ -12,6 +12,7 @@ gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'haml-rails' 
 gem 'sass-rails', '~> 4.0.3'
+gem "font-awesome-rails"
 gem 'modernizr-rails'
 
 group :test, :development do
