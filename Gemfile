@@ -8,13 +8,10 @@ gem 'devise', '~> 3.2.4'
 gem 'simple_form'
 gem 'decent_exposure', '~> 2.3.2'
 gem 'zeus'
-
-group :assets do
-  gem 'foundation-rails'
-  gem 'jquery-rails'
-  gem 'haml', '~> 4.0.5'
-  gem 'sass-rails', '~> 4.0.3'
-end
+gem 'foundation-rails'
+gem 'jquery-rails'
+gem 'haml-rails' 
+gem 'sass-rails', '~> 4.0.3'
 
 group :test, :development do
   gem 'factory_girl_rails'
