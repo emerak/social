@@ -1,0 +1,6 @@
+.row
+  .large-11.medium-11.small-11.columns
+    = publication.content
+  .large-1.medium-1.small-1.columns.left
+    = link_to post_path(publication), { method: :delete } do
+      = fa_icon 'times'
