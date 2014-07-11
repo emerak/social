@@ -14,4 +14,9 @@ describe PostsController do
     }.to change(Post,:count).by(1)
   end
 
+  it 'does not save the post' do
+    expect {
+      post :create, attributes_for(:post)
+    }.to change(Post,:count).by(1)
+  end
 end
