@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    post.user_id = current_user.id
     flash[:warning]= 'Your status cannot be published' unless post.save
     redirect_to root_path
   end
