@@ -8,6 +8,7 @@
     = csrf_meta_tags
   %body
     = render 'layouts/topbar' 
-    .row
+    .row.panel
+      = render 'layouts/sidebar' 
       = yield
     = javascript_include_tag :application
