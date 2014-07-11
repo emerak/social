@@ -74,6 +74,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.0)
+    modernizr-rails (2.7.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.17.1)
@@ -177,6 +178,7 @@ DEPENDENCIES
   foundation-rails
   haml-rails
   jquery-rails
+  modernizr-rails
   pg
   pry
   rails (= 4.1.2)
