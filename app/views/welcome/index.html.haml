@@ -3,5 +3,7 @@
   .row
     .large-8.medium-8.small-8.colums
       = render 'posts/form'
-
-
+  .row
+    .large-8.medium-8.small-8.colums
+      - news_feed.each do |news|
+        = raw news.content
