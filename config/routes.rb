@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "sign_in", to: "devise/sessions#new"
     get "sign_up", to: "devise/registrations#new"
   end
-
+  resources :users, only: :show
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
