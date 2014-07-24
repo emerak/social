@@ -1,2 +1,10 @@
+= render 'layouts/sidebar'
 .large-8.medium-8.small-8.columns
+  - if following?
+    = link_to 'Unfollow', friend_path({user_id:  user.id }), method: :delete,
+      class: 'button small radius left '
+  - else
+    = link_to 'Follow', friends_path({user_id:  user.id }), method: :post,
+      class: 'button small radius left '
+
   = render partial: 'welcome/publication', collection: posts

@@ -13,4 +13,16 @@ describe User, 'associations' do
     end
   end
 
+  describe '#unfollow' do
+    let(:following) { create(:user)}
+
+    before do
+      user.follow following
+    end
+
+    it 'unfollows a user' do
+      user.unfollow(following)
+      expect(Friend.count).to eql 0
+    end
+  end
 end
