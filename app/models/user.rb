@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
-  has_many :friends,         foreign_key: 'follower_id'
-  has_many :inverse_friends, foreign_key: 'following_id', class: 'Friends'
-  has_many :followings, through: :friends, source: :following
-  has_many :followers,  through: :inverse_friends, source: :followers
+  has_many :friends, foreign_key: 'follower_id'
+
+  def follow user
+    friends.create(following_id: user.id)
+  end
 
 end
