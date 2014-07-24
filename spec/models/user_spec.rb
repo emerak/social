@@ -25,4 +25,25 @@ describe User, 'associations' do
       expect(Friend.count).to eql 0
     end
   end
+
+  describe '#followings_posts' do
+    let(:following_1) { create(:user) }
+    let(:following_2) { create(:user) }
+    let(:post_1)      { create(:post, user: following_1) }
+    let(:post_2)      { create(:post, user: following_2) }
+    let(:my_post)     { create(:post, user: user) }
+
+    before do
+      user.follow following_1
+      user.follow following_2
+    end
+
+    it 'retrieves all the posts whom i follow, includig myselves' do
+      expect(user.followings_posts).to include(post_1,my_post,post_2)
+    end
+
+    it 'retrieves all the posts ordered by the newests' do
+      expect(user.followings_posts).to match_array([post_1,post_2,my_post])
+    end
+  end
 end
