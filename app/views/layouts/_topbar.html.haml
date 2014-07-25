@@ -1,2 +1,14 @@
 .contain-to-grid.sticky
   %nav.top-bar{"data-options" => "sticky_on: large", "data-topbar" => ""}
+    %ul.right
+      %section.top-bar-section
+        %ul.right
+          %li
+            - if user_signed_in?
+              = link_to current_user.email
+          %li.divider
+          %li
+            - if user_signed_in?
+              = link_to 'Sign out', destroy_user_session_path, method: :delete
+            - else
+              = link_to 'Sign in', user_session_path
