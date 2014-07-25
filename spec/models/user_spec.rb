@@ -2,8 +2,24 @@ require 'rails_helper'
 
 describe User, 'associations' do
   let(:user) { create(:user) }
+  let!(:post1) { create(:post, user: user) }
+  let!(:post2) { create(:post, user: user) }
+  let!(:post3) { create(:post, user: user) }
+  let!(:post4) { create(:post, user: user) }
+  let!(:post5) { create(:post, user: user) }
 
   it { expect(user).to have_many :posts }
+
+  it 'destroys all posts after the user is deleted' do
+    expect(Post.count).to eql 5
+    user.destroy
+    expect(Post.count).to eql 0
+  end
+
+end
+
+describe User do
+  let(:user) { create(:user) }
 
   describe '#follow' do
     let(:following) { create(:user)}
