@@ -1,0 +1,14 @@
+.bg-grey.padding
+  .content
+    = link_to "#{post.user_email} said", user_path(post.user)
+    = post.content
+    - unless current_user_post? post
+      = link_to post_path(post), { method: :delete } do
+        = fa_icon 'times',class: 'right'
+  .row
+    - post.comments.each do |c|
+      .large-12.columns.bg-white.content
+        = link_to "#{c.user.email} commented", user_path(c.user)
+        = c.comment
+    .large-12.columns.bg-white.content
+      = render  partial: 'shared/comment_form' , locals: { post: post }
