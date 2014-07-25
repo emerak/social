@@ -1,5 +1,14 @@
 .row
-  .large-12.medium-12.small-12.columns
-    = publication.content
-    = link_to post_path(publication), { method: :delete } do
-      = fa_icon 'times'
+.row.panel
+  .row.bg-publication
+    .large-12.columns
+      = publication.content
+      = link_to post_path(publication), { method: :delete } do
+        = fa_icon 'times'
+  .row.bg-comments
+    .large-12.columns
+      - publication.comments.each do |c|
+        .large-12.colums= link_to c.user.email, user_path(c.user)
+        .large-12.colums= c.comment
+    .large-12.columns
+      = render  partial: 'shared/comment_form', locals: { publication: publication }
