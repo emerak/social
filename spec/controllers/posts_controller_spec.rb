@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe PostsController do
   let(:user) { create(:user) }
 
