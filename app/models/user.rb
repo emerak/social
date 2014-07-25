@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
     Post.where(user_id: friends_ids).order('created_at desc')
   end
 
+  def followers
+    Friend.where(following_id: id).count
+  end
+
 end
