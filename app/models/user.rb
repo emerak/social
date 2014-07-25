@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
-  has_many :comments
-  has_many :friends, foreign_key: 'follower_id'
+  has_many :comments, dependent: :destroy
+  has_many :friends, foreign_key: 'follower_id', dependent: :destroy
 
   def follow user
     friends.create(following_id: user.id)
