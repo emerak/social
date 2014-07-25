@@ -20,13 +20,13 @@ group :test, :development do
   gem 'pry'
   gem 'rspec', '~>3.0.0.beta1'
   gem 'rspec-rails', '~>3.0.0.beta1'
+  gem 'faker'
+  gem 'capybara'
 end
 
 group :test do
   gem 'database_cleaner'
-  #gem 'capybara', '~> 2.2.1'
   gem 'selenium-webdriver'
-  gem 'faker'
   gem 'shoulda-matchers'
 end
 
