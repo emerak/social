@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get "sign_up", to: "devise/registrations#new"
   end
   resources :users, only: :show
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :friends, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

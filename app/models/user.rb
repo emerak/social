@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :posts
-  has_many :friends, foreign_key: 'follower_id'
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :friends, foreign_key: 'follower_id', dependent: :destroy
 
   def follow user
     friends.create(following_id: user.id)
@@ -18,6 +19,10 @@ class User < ActiveRecord::Base
   def followings_posts
     friends_ids = friends.pluck(:following_id) << id
     Post.where(user_id: friends_ids).order('created_at desc')
+  end
+
+  def followers
+    Friend.where(following_id: id).count
   end
 
 end
