@@ -1,10 +1,12 @@
 = render 'layouts/sidebar' 
-.large-7.medium-7.small-7.columns
+.large-7.medium-7.small-7.columns.bg-white.content
   %h3 What's on your mind?
   .row
-    .large-10.medium-10.small-10.colums
+    .large-10.medium-10.small-10.colums.large-offset-1
       = render 'posts/form'
-      = render partial: 'publication', collection: publications
+  .row
+    .large-10.medium-10.small-10.colums.large-offset-1
+      = render partial: 'post', collection: posts
 .large-2.medium-2.small-2.columns
   %h4 New users
 
