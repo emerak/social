@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
+  private
+
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(user)
+    root_path
+  end
 end
