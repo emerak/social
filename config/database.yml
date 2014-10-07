@@ -13,10 +13,13 @@ development:
   <<: *default
   database: social_development
 
-test:
+test: &test
   <<: *default
   database: social_test
 
 production:
   <<: *default
   database: social_production
+
+cucumber:
+  <<: *test
