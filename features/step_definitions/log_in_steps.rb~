@@ -21,7 +21,7 @@ Given(/^I am in the index page$/) do
 end
 
 Given(/^I write I tweet with the message "(.*?)"$/) do |message|
-  fill_in 'post[content]', with: message
+  fill_in 'post[comntent]', with: message
   click_button 'post'
 end
 

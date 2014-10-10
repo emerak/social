@@ -22,6 +22,6 @@
 	Then I can see my message "<message>"
 
 	Examples:
-	  |message|   
+	  |message|
 	  |ola ke ase|
-	  |mensaje 1| 
+	  |mensaje 1|
