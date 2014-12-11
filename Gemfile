@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem "font-awesome-rails"
 gem 'modernizr-rails'
+gem 'newrelic_rpm'
 
 group :test, :development do
   gem 'factory_girl_rails'
