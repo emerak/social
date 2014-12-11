@@ -11,4 +11,4 @@ Given(/^I enter valid "(.*?)" and "(.*?)" information$/) do |arg1, arg2|
 end
 
 Then(/^I should see the index page$/) do
-  pe
+end
